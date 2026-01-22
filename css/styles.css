@@ -1,11 +1,82 @@
-.main {
-
+* {
+    box-sizing: border-box;
 }
 
-.header {
+:root {
+    /**************/
+    /* Color      */
+    /* Background */
+    /**************/
+    --color-bg-body:    cornflowerblue;
+    --color-bg-header:  yellow;
+    --color-bg-main:    red;
+    --color-bg-footer:  green;
 
+    /**************/
+    /* Border     */
+    /**************/
+    --color-border-main: blue;
+    --color-border-header: black;
+    --color-border-footer: black;
+
+
+    /**************/
+    /* Other      */
+    /**************/
+    --width-page:  1200px;
+    --border-radius: 20px;
+}
+
+.container {
+    max-width: var(--width-page);
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--color-bg-body);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;      /* ← Flexbox für volle Höhe */
+    flex-direction: column;
+    min-height: 100vh;  /* ← Volle Viewport-Höhe */
+}
+
+
+.header {
+    padding: 1rem;
+    background-color: var(--color-bg-header);
+    height: 150px;
+    flex-shrink: 0;     /* ← Kein Schrumpfen */
+    border: 2pt solid var(--color-border-header);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.main {
+    padding: 2rem 1rem;
+    background-color: var(--color-bg-main);
+    flex: 1;            /* ← Füllt verbleibenden Raum */
+    border: 2pt solid var(--color-border-main);
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .footer {
+    padding: 1rem;
+    background-color: var(--color-bg-footer);
+    height: 100px;
+    flex-shrink: 0;     /* ← Kein Schrumpfen */
+    border: 2pt solid var(--color-border-footer);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
 
+@media (max-width: 1200px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
