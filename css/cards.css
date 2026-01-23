@@ -1,0 +1,53 @@
+.cards-container {
+    display: flex;
+    gap: 1rem; /* Konsistenter Abstand */
+    justify-content: center;
+    flex-wrap: wrap; /* Responsive Stack bei Mobil */
+    margin: 1rem 0;
+    max-width: 1100px; /* ← Gleiche Breite für ALLE Zeilen (2/3 Karten) */
+    width: 100%;
+    padding: 0 1rem; /* ← Symmetrische Ränder links/rechts */
+    margin-left: auto;
+    margin-right: auto; /* Zentriert */
+}
+
+.card {
+    height: 200px;
+    padding: 1.5rem;
+    border: 2pt solid var(--color-border-footer);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--color-shadow-card);
+    transition: transform 0.3s ease; /* Hover-Effekt */
+    display: flex;
+    flex-direction: column; /* ← Content zentriert vertikal */
+    justify-content: space-between;
+    background: var(--color-bg-card); /* ← Füge Hintergrund hinzu */
+}
+
+.card-col2 {
+    flex: 1 1 48%; /* ← Breiter (von 45%), passt perfekt zu gap */
+    max-width: 550px; /* ← Breiter */
+}
+
+.card-col3 {
+    flex: 1 1 31%; /* ← Breiter (von 30%) */
+    max-width: 360px; /* ← Breiter */
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        max-width: 100%;
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-col2, .card-col3 {
+        flex: 1 1 100%;
+        max-width: 400px; /* ← Breiter auf Mobil */
+    }
+}

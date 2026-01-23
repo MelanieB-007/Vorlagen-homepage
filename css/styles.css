@@ -1,4 +1,5 @@
 @import "lang-switcher.css";
+@import "cards.css";
 
 * {
     box-sizing: border-box;
@@ -10,6 +11,7 @@
     --color-bg-logo:    red;
     --color-bg-main:    red;
     --color-bg-footer:  green;
+    --color-bg-card:  green;
     --color-bg-button-lang: rgba(255,255,255,0.2);
     --color-bg-button-hover-lang: rgba(255,255,255,0.3);
     --color-bg-option-hover-lang: rgba(255,255,255,0.2);
@@ -17,8 +19,10 @@
     --color-border-main: blue;
     --color-border-header: black;
     --color-border-footer: black;
+    --color-border-card: black;
 
     --color-shadow-box-lang: rgba(0,0,0,0.2);
+    --color-shadow-card: rgba(0,0,0,0.15);
 
     --width-page:  1200px;
     --border-radius: 20px;
@@ -74,6 +78,8 @@ body {
     border-radius: var(--border-radius);
     margin-bottom: 10px;
 }
+
+
 
 .logo {
     font-size: 1.5rem;
@@ -215,6 +221,8 @@ body {
 @media (max-width: 1200px) {
     .container { padding-left: 1rem; padding-right: 1rem; }
 }
+
+
 
 @media (max-width: 768px) {
     .header {
