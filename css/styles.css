@@ -1,3 +1,5 @@
+@import "lang-switcher.css";
+
 * {
     box-sizing: border-box;
 }
@@ -5,12 +7,18 @@
 :root {
     --color-bg-body:    cornflowerblue;
     --color-bg-header:  yellow;
+    --color-bg-logo:    red;
     --color-bg-main:    red;
     --color-bg-footer:  green;
+    --color-bg-button-lang: rgba(255,255,255,0.2);
+    --color-bg-button-hover-lang: rgba(255,255,255,0.3);
+    --color-bg-option-hover-lang: rgba(255,255,255,0.2);
 
     --color-border-main: blue;
     --color-border-header: black;
     --color-border-footer: black;
+
+    --color-shadow-box-lang: rgba(0,0,0,0.2);
 
     --width-page:  1200px;
     --border-radius: 20px;
@@ -33,18 +41,18 @@ body {
 }
 
 .header {
-    margin-top: 10px;
-    padding: 1rem 1rem 0.5rem 2rem; /* ← Links mehr, unten weniger */
+    margin-top: 18px;
+    padding: 1rem 1rem 0.25rem 2rem; /* ← Links mehr, unten weniger */
     background-color: var(--color-bg-header);
-    height: 150px;
+    height: 120px;
     flex-shrink: 0;
     border: 2pt solid var(--color-border-header);
     border-radius: var(--border-radius);
     display: flex;
-    align-items: flex-end; /* ← Nav unten */
-    justify-content: flex-start; /* ← Nav links */
+    justify-content: flex-end; /* Hamburger | Nav | Lang | Login */
+    align-items: flex-end;
     position: relative;
-    gap: 1rem; /* ← Abstand Hamburger/Nav */
+    gap: 0.125rem; /* ← Abstand Hamburger/Nav */
 }
 
 .main {
@@ -65,6 +73,19 @@ body {
     border: 2pt solid var(--color-border-footer);
     border-radius: var(--border-radius);
     margin-bottom: 10px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-bg-logo);
+    text-decoration: none;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* Checkbox unsichtbar */
@@ -170,6 +191,26 @@ body {
     }
 }
 
+.login {
+    position: relative;
+    margin-left: 0; /* Rechtsbündig */
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--color-bg-button-lang);
+    transition: all 0.3s;
+}
+
+.right-section {
+    display: flex;
+    gap: 0.125rem; /* Nur hier ultra-eng */
+}
 
 @media (max-width: 1200px) {
     .container { padding-left: 1rem; padding-right: 1rem; }
