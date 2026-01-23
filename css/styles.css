@@ -3,26 +3,15 @@
 }
 
 :root {
-    /**************/
-    /* Color      */
-    /* Background */
-    /**************/
     --color-bg-body:    cornflowerblue;
     --color-bg-header:  yellow;
     --color-bg-main:    red;
     --color-bg-footer:  green;
 
-    /**************/
-    /* Border     */
-    /**************/
     --color-border-main: blue;
     --color-border-header: black;
     --color-border-footer: black;
 
-
-    /**************/
-    /* Other      */
-    /**************/
     --width-page:  1200px;
     --border-radius: 20px;
 }
@@ -38,26 +27,30 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    display: flex;      /* ← Flexbox für volle Höhe */
+    display: flex;
     flex-direction: column;
-    min-height: 100vh;  /* ← Volle Viewport-Höhe */
+    min-height: 100vh;
 }
 
-
 .header {
-    padding: 1rem;
+    margin-top: 10px;
+    padding: 1rem 1rem 0.5rem 2rem; /* ← Links mehr, unten weniger */
     background-color: var(--color-bg-header);
     height: 150px;
-    flex-shrink: 0;     /* ← Kein Schrumpfen */
+    flex-shrink: 0;
     border: 2pt solid var(--color-border-header);
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: flex-end; /* ← Nav unten */
+    justify-content: flex-start; /* ← Nav links */
+    position: relative;
+    gap: 1rem; /* ← Abstand Hamburger/Nav */
 }
 
 .main {
     padding: 2rem 1rem;
     background-color: var(--color-bg-main);
-    flex: 1;            /* ← Füllt verbleibenden Raum */
+    flex: 1;
     border: 2pt solid var(--color-border-main);
     border-radius: var(--border-radius);
     margin-top: 10px;
@@ -67,16 +60,158 @@ body {
 .footer {
     padding: 1rem;
     background-color: var(--color-bg-footer);
-    height: 100px;
-    flex-shrink: 0;     /* ← Kein Schrumpfen */
+    height: 70px;
+    flex-shrink: 0;
     border: 2pt solid var(--color-border-footer);
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
 }
 
-@media (max-width: 1200px) {
-    .container {
+/* Checkbox unsichtbar */
+.nav-toggle {
+    display: none !important;
+    appearance: none;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Desktop Nav */
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0 0 0.25rem 0; /* ← Näher unten */
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+    display: block;
+}
+
+.nav-list a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: 0.3s;
+}
+
+/* Dropdown Basis */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-label {
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.dropdown-label:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.dropdown-toggle {
+    display: none !important; /* Immer unsichtbar */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-bg-header);
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    min-width: 180px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    z-index: 1001;
+}
+
+/* Toggle öffnet Dropdown */
+.dropdown-toggle:checked ~ .dropdown-menu {
+    display: block;
+}
+
+/* Mobile: Dropdowns im Hauptmenü */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* Stackt im Hauptmenü */
+        box-shadow: none;
         padding-left: 1rem;
-        padding-right: 1rem;
+        background: transparent;
+    }
+
+    .dropdown-label {
+        font-weight: normal;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .container { padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media (max-width: 768px) {
+    .header {
+        justify-content: space-between; /* Hamburger links */
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-header);
+        margin: 0;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        z-index: 1000;
+    }
+
+    #nav-toggle:checked ~ .nav .nav-list {
+        display: flex;
+    }
+
+    #nav-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #nav-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    #nav-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 }
