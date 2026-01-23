@@ -14,7 +14,7 @@
 .card {
     height: 200px;
     padding: 1.5rem;
-    border: 2pt solid var(--color-border-footer);
+    border: 2pt solid var(--color-border-card);
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px var(--color-shadow-card);
     transition: transform 0.3s ease; /* Hover-Effekt */

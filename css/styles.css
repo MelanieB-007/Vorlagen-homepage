@@ -5,21 +5,22 @@
     box-sizing: border-box;
 }
 
+
 :root {
-    --color-bg-body:    cornflowerblue;
-    --color-bg-header:  yellow;
-    --color-bg-logo:    red;
-    --color-bg-main:    red;
-    --color-bg-footer:  green;
-    --color-bg-card:  green;
+    --color-bg-body:    #4596d1;
+    --color-bg-header:  #f8981d;
+    --color-bg-logo:    #f8981d;
+    --color-bg-main:    #034ea2;
+    --color-bg-footer:  #ed1a3b;
+    --color-bg-card:  #4596d1;
     --color-bg-button-lang: rgba(255,255,255,0.2);
     --color-bg-button-hover-lang: rgba(255,255,255,0.3);
     --color-bg-option-hover-lang: rgba(255,255,255,0.2);
 
-    --color-border-main: blue;
-    --color-border-header: black;
-    --color-border-footer: black;
-    --color-border-card: black;
+    --color-border-main: #034ea2;
+    --color-border-header: #f8981d;
+    --color-border-footer: #ed1a3b;
+    --color-border-card: #4596d1;
 
     --color-shadow-box-lang: rgba(0,0,0,0.2);
     --color-shadow-card: rgba(0,0,0,0.15);
@@ -46,18 +47,19 @@ body {
 
 .header {
     margin-top: 18px;
-    padding: 1rem 1rem 0.25rem 2rem; /* ← Links mehr, unten weniger */
+    padding: 1rem 2rem 0.25rem 2rem; /* Mehr Platz links für Logo */
     background-color: var(--color-bg-header);
     height: 120px;
     flex-shrink: 0;
     border: 2pt solid var(--color-border-header);
     border-radius: var(--border-radius);
-    display: flex;
-    justify-content: flex-end; /* Hamburger | Nav | Lang | Login */
+    display: flex; /* Flex-Container */
     align-items: flex-end;
+    gap: 1rem; /* Abstände zwischen Elementen */
+    justify-content: space-between; /* Logo links, Mitte zentriert (Nav), Right rechts */
     position: relative;
-    gap: 0.125rem; /* ← Abstand Hamburger/Nav */
 }
+
 
 .main {
     padding: 2rem 1rem;
@@ -79,8 +81,6 @@ body {
     margin-bottom: 10px;
 }
 
-
-
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -88,10 +88,22 @@ body {
     text-decoration: none;
 }
 
+.img-logo {
+    height: 100px;
+}
+
 .nav-section {
+    flex: 1; /* Nav nimmt verfügbaren Platz ein, zentriert sich automatisch */
     display: flex;
+    justify-content: center; /* Explizit zentrieren */
     align-items: center;
     gap: 1rem;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Kleiner Gap für Lang+Login */
 }
 
 /* Checkbox unsichtbar */
@@ -213,27 +225,38 @@ body {
     transition: all 0.3s;
 }
 
-.right-section {
-    display: flex;
-    gap: 0.125rem; /* Nur hier ultra-eng */
-}
 
 @media (max-width: 1200px) {
     .container { padding-left: 1rem; padding-right: 1rem; }
 }
 
-
-
 @media (max-width: 768px) {
     .header {
-        justify-content: space-between; /* Hamburger links */
+        justify-content: space-between; /* Logo links, Right rechts, Hamburger dazwischen */
         padding: 1rem;
     }
 
     .hamburger {
-        display: flex;
+        display: flex; /* Sichtbar */
+        order: 2; /* Hamburger zwischen Logo und Right */
     }
 
+    .logo {
+        order: 1; /* Logo ganz links */
+    }
+
+    .right-section {
+        order: 3; /* Right ganz rechts */
+    }
+
+    .nav-section {
+        order: 4; /* Nav drop-down */
+        /* Deine bestehenden Mobile-Regeln behalten */
+    }
+}
+
+
+@media (max-width: 768px) {
     .nav-list {
         display: none;
         flex-direction: column;
