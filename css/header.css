@@ -2,7 +2,7 @@
 .header {
     flex-shrink: 0;
     padding: 1rem 2rem 0.25rem 2rem;
-    margin: 5px auto 10px auto;
+    margin: 0 auto;
     width: 100%;
     max-width: var(--width-page);
     height: 120px; /* Mehr Höhe für 2 Zeilen */
@@ -46,10 +46,14 @@
     grid-row: 2;
     grid-column: 2;
     border: 1pt solid black;
+    padding-bottom: 8px; /* ← 8px näher unten */
+    align-self: end;     /* ← Zieht ans untere Grid-Ende */
 }
 
 .right-section {
     grid-row: 2;
     grid-column: 3;
     border: 1pt solid blue;
+    padding-bottom: 8px; /* Gleiche Höhe wie Nav */
+    align-self: end;
 }
