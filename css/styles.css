@@ -1,10 +1,6 @@
-@import "lang-switcher.css";
-@import "cards.css";
-
 * {
     box-sizing: border-box;
 }
-
 
 :root {
     --color-bg-body:    #4596d1;
@@ -21,9 +17,13 @@
     --color-border-header: #f8981d;
     --color-border-footer: #ed1a3b;
     --color-border-card: #4596d1;
+    --glass-border: 2pt solid rgba(255,255,255,0.3);
 
     --color-shadow-box-lang: rgba(0,0,0,0.2);
     --color-shadow-card: rgba(0,0,0,0.15);
+    --shadow-soft: 0 8px 32px rgba(0,0,0,0.12);
+    --shadow-hover: 0 12px 40px rgba(0,0,0,0.2);
+    --glass-blur: blur(10px);
 
     --width-page:  1200px;
     --border-radius: 20px;
@@ -32,7 +32,8 @@
 .container {
     max-width: var(--width-page);
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; /* ← ZENTRIERT */
+    /* KEIN padding hier – verursachte links-Versatz */
 }
 
 body {
@@ -47,38 +48,46 @@ body {
 
 .header {
     margin-top: 18px;
-    padding: 1rem 2rem 0.25rem 2rem; /* Mehr Platz links für Logo */
+    padding: 1rem 2rem 0.25rem 2rem;
     background-color: var(--color-bg-header);
     height: 120px;
     flex-shrink: 0;
-    border: 2pt solid var(--color-border-header);
+    border: var(--glass-border);
     border-radius: var(--border-radius);
-    display: flex; /* Flex-Container */
+    display: flex;
     align-items: flex-end;
-    gap: 1rem; /* Abstände zwischen Elementen */
-    justify-content: space-between; /* Logo links, Mitte zentriert (Nav), Right rechts */
+    gap: 1rem;
+    justify-content: space-between;
     position: relative;
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: var(--glass-blur);
 }
 
-
 .main {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem; /* ← Padding INNEN für Content-Abstand */
     background-color: var(--color-bg-main);
     flex: 1;
-    border: 2pt solid var(--color-border-main);
+    border: var(--glass-border);
     border-radius: var(--border-radius);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto; /* ← FIX: AUTO zentriert horizontal */
+    width: 100%;
+    max-width: var(--width-page);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: var(--glass-blur);
 }
 
 .footer {
-    padding: 1rem;
+    padding: 1rem 2rem;
     background-color: var(--color-bg-footer);
     height: 70px;
     flex-shrink: 0;
-    border: 2pt solid var(--color-border-footer);
+    border: var(--glass-border);
     border-radius: var(--border-radius);
-    margin-bottom: 10px;
+    margin: 10px auto 10px; /* ← FIX: AUTO für Zentrierung */
+    width: 100%;
+    max-width: var(--width-page);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: var(--glass-blur);
 }
 
 .logo {
@@ -93,9 +102,9 @@ body {
 }
 
 .nav-section {
-    flex: 1; /* Nav nimmt verfügbaren Platz ein, zentriert sich automatisch */
+    flex: 1;
     display: flex;
-    justify-content: center; /* Explizit zentrieren */
+    justify-content: center;
     align-items: center;
     gap: 1rem;
 }
@@ -103,7 +112,7 @@ body {
 .right-section {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Kleiner Gap für Lang+Login */
+    gap: 0.5rem;
 }
 
 /* Checkbox unsichtbar */
@@ -120,7 +129,7 @@ body {
 .nav-list {
     display: flex;
     list-style: none;
-    margin: 0 0 0.25rem 0; /* ← Näher unten */
+    margin: 0 0 0.25rem 0;
     padding: 0;
     gap: 2rem;
 }
@@ -172,7 +181,7 @@ body {
 }
 
 .dropdown-toggle {
-    display: none !important; /* Immer unsichtbar */
+    display: none !important;
 }
 
 .dropdown-menu {
@@ -185,12 +194,11 @@ body {
     margin: 0;
     padding: 0.5rem 0;
     min-width: 180px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-hover);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     z-index: 1001;
 }
 
-/* Toggle öffnet Dropdown */
 .dropdown-toggle:checked ~ .dropdown-menu {
     display: block;
 }
@@ -198,7 +206,7 @@ body {
 /* Mobile: Dropdowns im Hauptmenü */
 @media (max-width: 768px) {
     .dropdown-menu {
-        position: static; /* Stackt im Hauptmenü */
+        position: static;
         box-shadow: none;
         padding-left: 1rem;
         background: transparent;
@@ -211,7 +219,7 @@ body {
 
 .login {
     position: relative;
-    margin-left: 0; /* Rechtsbündig */
+    margin-left: 0;
 }
 
 .login-button {
@@ -223,57 +231,61 @@ body {
     cursor: pointer;
     background: var(--color-bg-button-lang);
     transition: all 0.3s;
+    border: var(--glass-border);
 }
 
+.login-button:hover {
+    box-shadow: var(--shadow-hover);
+}
 
 @media (max-width: 1200px) {
-    .container { padding-left: 1rem; padding-right: 1rem; }
+    .header, .main, .footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
     .header {
-        justify-content: space-between; /* Logo links, Right rechts, Hamburger dazwischen */
+        justify-content: space-between;
         padding: 1rem;
+        position: relative;
     }
 
     .hamburger {
-        display: flex; /* Sichtbar */
-        order: 2; /* Hamburger zwischen Logo und Right */
+        display: flex;
+        order: 2;
     }
 
     .logo {
-        order: 1; /* Logo ganz links */
+        order: 1;
     }
 
     .right-section {
-        order: 3; /* Right ganz rechts */
+        order: 3;
     }
 
     .nav-section {
-        order: 4; /* Nav drop-down */
-        /* Deine bestehenden Mobile-Regeln behalten */
-    }
-}
-
-
-@media (max-width: 768px) {
-    .nav-list {
-        display: none;
-        flex-direction: column;
+        order: 4;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         background: var(--color-bg-header);
-        margin: 0;
-        padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        border-bottom-left-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
         z-index: 1000;
     }
 
-    #nav-toggle:checked ~ .nav .nav-list {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: static;
+        margin: 0;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+
+    #nav-toggle:checked ~ .nav-section .nav-list {
         display: flex;
     }
 
@@ -286,4 +298,154 @@ body {
     #nav-toggle:checked ~ .hamburger span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
+
+    .header, .main, .footer {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+}
+
+.cards-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.card {
+    height: 200px;
+    padding: 1.5rem;
+    border: var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-bg-card);
+    backdrop-filter: var(--glass-blur);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-col2 {
+    flex: 1 1 48%;
+    max-width: 550px;
+}
+
+.card-col3 {
+    flex: 1 1 31%;
+    max-width: 360px;
+}
+
+.lang-switcher {
+    position: relative;
+    margin-right: 0.125rem;
+}
+
+.lang-toggle {
+    display: none;
+}
+
+.lang-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--color-bg-button-lang);
+    transition: all 0.3s;
+    border: var(--glass-border);
+}
+
+.lang-button:hover {
+    background: var(--color-bg-button-hover-lang);
+    box-shadow: var(--shadow-hover);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-bg-header);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: var(--shadow-hover);
+    min-width: 120px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 1001;
+}
+
+#lang-toggle:checked ~ .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.lang-option:hover {
+    background: var(--color-bg-option-hover-lang);
+}
+
+/* Flags */
+.fi {
+    width: 24px;
+    height: 18px;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        max-width: 100%;
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-col2, .card-col3 {
+        flex: 1 1 100%;
+        max-width: 400px;
+    }
+
+    .main, .footer {
+        padding: 1rem;
+        margin: 5px auto; /* ← Kleiner Abstand mobil */
+    }
+}
+
+/* Header und Dropdowns vorne anordnen */
+.header {
+    position: relative;
+    z-index: 2000;
+}
+
+.dropdown-menu,
+.lang-dropdown {
+    position: absolute;
+    z-index: 2001; /* Höher als Header */
+}
+
+/* Main etwas zurück (aber nicht zu tief) */
+.main {
+    position: relative;
+    z-index: 1; /* Niedriger als Header/Dropdowns */
 }
