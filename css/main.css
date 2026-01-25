@@ -4,6 +4,7 @@
     max-width: var(--width-page);
     width: 100%;
     margin: 0 auto;
+    overflow: visible;
 }
 
 .main {
@@ -14,6 +15,7 @@
     max-width: var(--width-page);
     padding: 2rem 2rem;
     z-index: 1;
+    overflow: visible;
 
     background-color: var(--color-bg-main);
     backdrop-filter: var(--glass-blur);

@@ -1,41 +1,41 @@
-
+/* HEADER-GRID (3 Spalten, 2 Zeilen) */
 .header {
     flex-shrink: 0;
     padding: 1rem 2rem 0.25rem 2rem;
-    margin: 0 auto;
+    margin: 10px auto 5px auto;
     width: 100%;
     max-width: var(--width-page);
-    height: 120px; /* Mehr Höhe für 2 Zeilen */
+    height: 120px;
+    z-index: 2000;
+
     background-color: var(--color-bg-header);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
 
-    /* GRID: 3 Spalten, 2 Zeilen */
     display: grid;
-    grid-template-columns: auto 1fr auto; /* Spalte1 schmal(Logo) | Mitte breit | Rechts schmal */
-    grid-template-rows: 1fr 1fr;         /* 2 Zeilen */
+    grid-template-columns: auto 1fr 220px; /* Logo | Nav | Right (breiter) */
+    grid-template-rows: 1fr 1fr;
     gap: 1rem;
     align-items: start;
 }
 
-/* Logo über Zeile 1+2 in Spalte 1 */
 .logo-section {
-    grid-row: 1 / 3;  /* ← Zeile 1 BIS 3 (überspannt Zeile 2) */
-    grid-column: 1;   /* Spalte 1 */
+    grid-row: 1 / 3;
+    grid-column: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .logo {
-    width: 90px;
+    width: 115px;
 }
 
 .header-top-right {
     grid-row: 1;
-    grid-column: 2 / 4; /* ← Spalte 2 BIS 4 (überspannt Spalte 3) */
+    grid-column: 2 / 4;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -45,15 +45,146 @@
 .nav-section {
     grid-row: 2;
     grid-column: 2;
-    border: 1pt solid black;
-    padding-bottom: 8px; /* ← 8px näher unten */
-    align-self: end;     /* ← Zieht ans untere Grid-Ende */
+    border: 1pt solid black; /* TEMP */
+    padding-bottom: 8px;
+    align-self: end;
 }
 
 .right-section {
     grid-row: 2;
     grid-column: 3;
-    border: 1pt solid blue;
-    padding-bottom: 8px; /* Gleiche Höhe wie Nav */
     align-self: end;
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    padding-bottom: 0.25rem;
+    position: relative;
+    z-index: 2001;
 }
+
+/* GEMEINDE BUTTONS (Login + Lang IDENTISCH) */
+.login-button,
+.lang-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    background: var(--color-bg-button-lang);
+    border: var(--button-border);           /* Orange Border */
+    box-shadow: var(--button-shadow);       /* Orange Schatten */
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: 500;
+    height: 100%;
+}
+.lang-button {
+    position: relative;
+    min-width: 52px; /* ← Etwas breiter für Balance */
+}
+
+.login-button:hover,
+.lang-button:hover {
+    box-shadow: var(--button-shadow-hover);
+    transform: translateY(-1px);
+    background: rgba(255, 165, 0, 1);
+}
+
+.login {
+    position: relative;
+}
+
+/* LANG-SWITCHER (Flags-only) */
+.lang-switcher {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Focus-Outline entfernen (Arrow/Button) */
+.lang-button:focus,
+.lang-button .arrow:focus,
+.lang-toggle:focus + .lang-button {
+    outline: none !important;
+}
+
+/* Optional: Custom Focus-Indikator (WCAG-konform) */
+.lang-button:focus-visible,
+.lang-toggle:focus-visible + .lang-button {
+    outline: 2px solid rgba(255, 165, 0, 0.8);  /* Orange Ring */
+    outline-offset: 2px;
+}
+
+
+.lang-toggle {
+    display: none !important;  /* Stärker als display:none */
+    outline: none !important;
+}
+
+.lang-button .arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+#lang-toggle:checked + .lang-button .arrow {
+    transform: rotate(180deg);
+}
+
+.fi {
+    width: 24px;
+    height: 18px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.lang-dropdown {
+    position: absolute;
+    z-index: 2002 !important;
+    top: 100%;
+    right: 50%;              /* ← Rechts an halber Button-Position */
+    left: auto;
+    margin-top: 4px;
+    width: 28px;             /* ← Exakt halbe Button-Breite (52px / 2) */
+    min-width: unset;        /* ← Deaktiviere min-width */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) translateX(50%); /* ← Kombiniere für Animation */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    background: var(--color-bg-header);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+}
+
+
+#lang-toggle:checked ~ .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateX(50%);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0.5rem 0 !important;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.lang-option:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.lang-option.active {
+    background: rgba(255,255,255,0.2);
+}
+

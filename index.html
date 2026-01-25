@@ -25,7 +25,29 @@
                 Navigation
             </nav>
             <div class="right-section">
-                Lang+Login
+                <div class="login">
+                    <button class="login-button">Login</button>
+                </div>
+                <div class="lang-switcher">
+                    <input type="checkbox" id="lang-toggle" class="lang-toggle">
+                    <label for="lang-toggle" class="lang-button">
+                        <span class="fi fi-de"></span> <!-- NUR Flagge -->
+                        <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </label>
+                    <div class="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">  <!-- div statt label! -->
+                            <span class="fi fi-de"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span class="fi fi-gb"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fr">
+                            <span class="fi fi-fr"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 

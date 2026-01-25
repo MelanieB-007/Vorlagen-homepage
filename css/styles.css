@@ -12,12 +12,19 @@
     --color-bg-main:    #034ea2;
     --color-bg-footer:  #ed1a3b;
     --color-bg-card:    #4596d1;
+    --color-bg-button-lang: rgba(255,255,255,0.2);
+    --color-bg-button-hover-lang: rgba(255,255,255,0.3);
+    --color-bg-option-hover-lang: rgba(255,255,255,0.2);
 
     --glass-border: 2pt solid rgba(255,255,255,0.3);
-
+    --color-shadow-box-lang: rgba(0,0,0,0.2);
     --shadow-soft: 0 8px 32px rgba(0,0,0,0.12);
     --shadow-hover: 0 12px 40px rgba(0,0,0,0.2);
     --glass-blur: blur(10px);
+
+    --button-border: 1px solid rgba(255, 140, 0, 0.6);  /* DarkOrange */
+    --button-shadow: 0 2px 8px rgba(255, 140, 0, 0.3);
+    --button-shadow-hover: 0 4px 12px rgba(255, 140, 0, 0.5);
 
     --width-page:  1200px;
     --border-radius: 20px;
@@ -32,6 +39,8 @@ body {
     min-height: 100vh;
     background-color: var(--color-bg-body);
     font-family: sans-serif;
+    position: relative;
+    z-index: 0;
 }
 
 

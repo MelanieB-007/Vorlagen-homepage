@@ -4,6 +4,7 @@
     width: 100%;
     max-width: var(--width-page);
     height: 70px;
+    z-index: 1;
 
     background-color: var(--color-bg-footer);
     backdrop-filter: var(--glass-blur);
