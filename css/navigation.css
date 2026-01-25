@@ -1,0 +1,124 @@
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    align-items: end;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-button,
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-header);
+    height: 100%;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+
+    cursor: pointer;
+    background: var(--color-bg-button-lang);
+    border: var(--button-border-header);
+    border-radius: var(--border-radius);
+    box-shadow: var(--button-shadow);
+    transition: var(--transition-all) ease;
+
+    color: var(--color-button-header);
+    font-weight: var(--font-weight-button-header);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background: var(--color-bg-header);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    flex-direction: column;
+    z-index: 2002;
+    margin-top: 0.25rem;
+    padding: 0.5rem 0;
+}
+
+.nav-toggle:checked + .nav-dropdown {
+    display: flex;
+}
+
+.nav-option {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--color-button-header);
+    text-decoration: none;
+    transition: var(--transition-all);
+    font-size: 0.95rem;
+}
+
+.nav-option:hover {
+    background: var(--color-bg-button-lang-option-hover);
+    color: var(--color-button-header);
+}
+
+
+.nav-toggle:checked + .nav-dropdown ~ .nav-button .arrow,
+.nav-button:hover .arrow {
+    transform: rotate(180deg);
+}
+
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none !important;
+    }
+
+    .nav-button:hover + .nav-dropdown,
+    .nav-item:hover .nav-dropdown {
+        display: flex;
+    }
+
+    .nav-dropdown {
+        top: calc(100% + 0.5rem);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .nav-dropdown {
+        position: static;
+        margin-top: 0;
+        box-shadow: none;
+        border-top: 1px solid var(--glass-border);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+
+    .nav-toggle:checked + .nav-dropdown {
+        display: flex;
+    }
+
+    .nav-button,
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}

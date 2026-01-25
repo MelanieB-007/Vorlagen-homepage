@@ -1,4 +1,5 @@
 @import "logo.css";
+@import "navigation.css";
 @import "buttons-header.css";
 @import "lang-switcher.css";
 
@@ -39,11 +40,9 @@
 .nav-section {
     grid-row: 2;
     grid-column: 2;
-    padding-bottom: 8px;
     align-self: end;
     justify-self: start;
-
-    border: 1pt solid black; /* TEMP */
+    padding-bottom: 0.25rem;
 }
 
 /* RIGHT-SECTION (Login + Lang) */

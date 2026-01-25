@@ -24,3 +24,10 @@
     transform: translateY(-1px);
     background: var(--color-bg-header-button-hover);
 }
+
+.arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: var(--transition-all) ease;
+}
