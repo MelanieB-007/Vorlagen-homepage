@@ -1,0 +1,22 @@
+.footer {
+    flex-shrink: 0;
+    padding: 1rem 2rem;
+    margin-top: 5px;
+    margin-bottom: 10px !important;
+    width: 100%;
+    max-width: var(--width-page);
+    height: 70px;
+
+    background-color: var(--color-bg-footer);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1rem;
+        margin: 5px auto;
+    }
+}

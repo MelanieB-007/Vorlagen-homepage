@@ -1,93 +1,50 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <title>Portfolio - Melanie Busse</title>
+    <head>
+        <title>Portfolio - Melanie Busse</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Junior Web Developer | React, JavaScript, Zoo-Quiz Creator | Lemvig/Tornesch">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Junior Web Developer | React, JavaScript, Zoo-Quiz Creator | Lemvig/Tornesch">
 
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.3.2/css/flag-icons.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.3.2/css/flag-icons.min.css">
 
-<!--    <script src="./js/navigation.js" defer></script>-->
-    <script src="./js/lang-switcher.js" defer></script>
-</head>
-<body>
-<header class="header container">
-    <div class="logo">
-        <img class="img-logo" src="./images/logo.png"/>
-    </div>
-    <label class="hamburger" for="nav-toggle">
-        <span></span><span></span><span></span> <!-- Hamburger-Linien -->
-    </label>
-    <!-- FIX: Checkbox HIER (nach Label), damit ~ Selektoren zu hamburger/nav-section greifen -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <div class="nav-section">
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="#home">Home</a></li>
-                <li class="dropdown">
-                    <label for="portfolio-toggle" class="dropdown-label">Portfolio</label>
-                    <input type="checkbox" id="portfolio-toggle" class="dropdown-toggle">
-                    <ul class="dropdown-menu">
-                        <li><a href="#zoo-quiz">Zoo-Quiz</a></li>
-                        <li><a href="#portfolio-site">Portfolio-Site</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <label for="about-toggle" class="dropdown-label">Über mich</label>
-                    <input type="checkbox" id="about-toggle" class="dropdown-toggle">
-                    <ul class="dropdown-menu">
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#cv">Lebenslauf</a></li>
-                    </ul>
-                </li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="right-section">
-        <!-- Language Switcher rechts -->
-        <div class="lang-switcher">
-            <input type="checkbox" id="lang-toggle" class="lang-toggle">
-            <label for="lang-toggle" class="lang-button">
-                <span class="fi fi-de"></span> <!-- ← Dynamisch gewechselt -->
-            </label>
-            <div class="lang-dropdown">
-                <label for="lang-toggle" class="lang-option" data-lang="de">
-                    <span class="fi fi-de"></span>
-                </label>
-                <label for="lang-toggle" class="lang-option" data-lang="en">
-                    <span class="fi fi-gb"></span>
-                </label>
-                <label for="lang-toggle" class="lang-option" data-lang="fr">
-                    <span class="fi fi-fr"></span>
-                </label>
+    <!--    <script src="./js/navigation.js" defer></script>-->
+        <script src="./js/lang-switcher.js" defer></script>
+    </head>
+    <body>
+        <header class="header container">
+            <div class="logo-section">
+                <img class="logo" src="./images/logo.png"/>
             </div>
-        </div>
-        <div class="login">
-            <button class="login-button">Login</button>
-        </div>
-    </div>
-</header>
+            <div class="header-top-right">
+                <span>Slogan / Suchfeld / Zweites Logo?</span>
+            </div>
+            <nav class="nav-section">
+                Navigation
+            </nav>
+            <div class="right-section">
+                Lang+Login
+            </div>
+        </header>
 
-<main class="main container">
-    <!-- 2 Karten -->
-    <div class="cards-container">
-        <div class="card card-col2">Karte 1</div>
-        <div class="card card-col2">Karte 2</div>
-    </div>
+        <main class="main container">
+            <!-- 2 Karten -->
+            <div class="cards-container">
+                <div class="card card-col2">Karte 1</div>
+                <div class="card card-col2">Karte 2</div>
+            </div>
 
-    <!-- 3 Karten -->
-    <div class="cards-container">
-        <div class="card card-col3">Karte 1</div>
-        <div class="card card-col3">Karte 2</div>
-        <div class="card card-col3">Karte 3</div>
-    </div>
-</main>
-<footer class="footer container">
+            <!-- 3 Karten -->
+            <div class="cards-container">
+                <div class="card card-col3">Karte 1</div>
+                <div class="card card-col3">Karte 2</div>
+                <div class="card card-col3">Karte 3</div>
+            </div>
+        </main>
+        <footer class="footer container">
 
-</footer>
-</body>
+        </footer>
+    </body>
 </html>
