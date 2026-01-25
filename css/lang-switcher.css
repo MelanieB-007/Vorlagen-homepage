@@ -14,6 +14,13 @@
     outline: none !important;
 }
 
+.lang-button .arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: var(--transition-all) ease;
+}
+
 .fi {
     width: 24px;
     height: 18px;
@@ -61,10 +68,10 @@
     background: var(--color-bg-option-hover-lang);
 }
 
-/* FOCUS-OUTLINE FIX (Accessibility) */
+/* VERBESSERTER FOCUS-FIX: Arrow bekommt KEINEN Focus-Outline */
 .lang-button:focus,
-.lang-button .arrow:focus,
-.lang-toggle:focus + .lang-button {
+.lang-button .arrow,
+.lang-toggle:focus + .lang-button .arrow {
     outline: none !important;
 }
 
