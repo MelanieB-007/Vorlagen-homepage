@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ===== LANG-SWITCHER (CSS-ONLY POSITION + JS LOGIC) =====
     const langButtonFlag = document.querySelector('.lang-button .fi');
-    const langOptions = document.querySelectorAll('.lang-option');  // Jetzt <div class="lang-option">
+    const langOptions = document.querySelectorAll('.lang-option');
     const langToggle = document.getElementById('lang-toggle');
     const langButton = document.querySelector('.lang-button');
 
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             langToggle.checked = false; // Schließen
             console.log('🌐 Sprache gewechselt:', newLang);
-            // location.reload(); // ← Uncomment für echte i18n
         });
     });
 
@@ -65,23 +63,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ===== DROPDOWNS ALLE SCHLIESSEN (Desktop/Mobile) =====
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle, #lang-toggle');
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('change', () => {
-            dropdownToggles.forEach(other => {
-                if (other !== toggle) other.checked = false;
-            });
-        });
-    });
-
-    // ===== MOBILE NAV: LINK-CLICK SCHLIESSEN =====
-    document.querySelectorAll('.nav-list a, .nav-section a').forEach(link => {
-        link.addEventListener('click', () => {
-            const navToggle = document.getElementById('nav-toggle');
-            if (navToggle) navToggle.checked = false;
-        });
-    });
-
-    console.log('✅ Lang-Switcher CSS-only ready. Sprache:', savedLang);
+    console.log('✅ Lang-Switcher ready. Sprache:', savedLang);
 });

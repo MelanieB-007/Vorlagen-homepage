@@ -133,18 +133,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: var(--gap-header);
+    height: 100%;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+
     cursor: pointer;
     background: var(--color-bg-button-lang);
-    border: var(--button-border);
+    border: var(--button-border-header);
+    border-radius: 20px;
     box-shadow: var(--button-shadow);
-    transition: all 0.3s ease;
-    color: white;
-    font-weight: 500;
-    height: 100%;
-    font-size: 0.9rem; /* ← Etwas kleiner Mobile */
+    transition: var(--transition-all) ease;
+
+    color: var(--color-button-header);
+    font-weight: var(--font-weight-button-header);
+    font-size: 0.9rem;
 }
 
 .lang-button {
