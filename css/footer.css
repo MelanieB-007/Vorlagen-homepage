@@ -1,13 +1,13 @@
 .footer {
+    position: relative;
     flex-shrink: 0;
-    padding: 1rem 0 2rem; /* ← Mehr bottom-padding → Text höher */
+    padding: 1rem 0 2rem;
     width: 100%;
     max-width: var(--width-page);
-    height: 70px; /* ← Etwas höher */
+    height: 70px;
     z-index: 1;
     text-align: center;
 
-    position: relative; /* ← Für Pseudo-Elemente */
     background-color: var(--color-bg-footer);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
@@ -23,20 +23,19 @@
     transform: translateX(-50%);
     width: 80%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #034ea2, transparent); /* Blau-Glow-Linie */
-    box-shadow: 0 0 10px rgba(3, 78, 162, 0.6); /* ← Neon-Schatten! */
+
+    background: linear-gradient(90deg, transparent, #034ea2, transparent);
+    box-shadow: var(--box-shadow-footer);
 }
 
 .footer p {
-    margin: 0.5rem 0 0; /* ← Höher vom Rand */
+    margin: 0.5rem 0 0;
     font-size: 0.875rem;
-    color: #034ea2; /* Deine Farbe */
+    color: var(--color-text-footer);
     font-weight: 500;
-    text-shadow:
-            0 1px 2px rgba(0,0,0,0.5),  /* ← Dunkler Schatten */
-            0 0 8px rgba(3, 78, 162, 0.3); /* ← Blau-Glow! */
+    text-shadow: var(--text-shadow-footer), var(--text-shadow-footer-glow);
     position: relative;
-    z-index: 2; /* Über ::before */
+    z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -48,6 +47,6 @@
 
     .footer p {
         font-size: 0.8rem;
-        text-shadow: 0 1px 1px rgba(0,0,0,0.7); /* Stärker Mobile */
+        text-shadow: var(--text-shadow-mobile);
     }
 }

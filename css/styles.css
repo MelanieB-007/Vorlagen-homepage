@@ -13,9 +13,12 @@
     --color-bg-footer:  #ed1a3b;
     --color-bg-card:    #4596d1;
     --color-bg-button-lang: rgba(255,255,255,0.2);
+    --color-bg-button-lang-option-hover: rgba(255,255,255,0.1);
     --color-bg-option-hover-lang: rgba(255,255,255,0.2);
+    --color-bg-header-button-hover: rgba(255, 165, 0, 1);
 
     --color-text-muted: #034ea2;
+    --color-text-footer: #034ea2;
     --color-button-header: #ffffff;
     --font-weight-button-header: 500;
 
@@ -29,12 +32,19 @@
     --button-border-header: 1px solid rgba(255, 140, 0, 0.6);
     --button-shadow: 0 2px 8px rgba(255, 140, 0, 0.3);
     --button-shadow-hover: 0 4px 12px rgba(255, 140, 0, 0.5);
-
+    --button-shadow-lang-focus: 0 0 0 3px rgba(255, 165, 0, 0.5);
+    --box-shadow-footer: 0 0 10px rgba(3, 78, 162, 0.6); /* ← Neon-Schatten! */
+    --text-shadow-footer: 0 1px 2px rgba(0,0,0,0.5);  /* ← Dunkler Schatten */
+    --text-shadow-mobile: 0 1px 1px rgba(0,0,0,0.7);
+    --text-shadow-footer-glow: 0 0 8px rgba(3, 78, 162, 0.3); /* ← Blau-Glow! */;
 
     --width-page:  1200px;
     --border-radius: 20px;
 
     --gap-header: 0.5rem;
+    --translateY: translateY(-10px);
+    --translateX: translateX(50%);
+    --cubic-bezier: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 body {

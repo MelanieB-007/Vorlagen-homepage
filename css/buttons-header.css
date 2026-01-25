@@ -1,0 +1,26 @@
+.header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-header);
+    height: 100%;
+    padding: 0.5rem 1rem;
+
+    cursor: pointer;
+    background: var(--color-bg-button-lang);
+    border: var(--button-border-header);
+    border-radius:var(--border-radius);
+    box-shadow: var(--button-shadow);
+    transition: var(--transition-all) ease;
+
+    color: var(--color-button-header);
+    font-weight: var(--font-weight-button-header);
+    font-size: 0.9rem;
+}
+
+.header-button:hover,
+.header-button:focus {
+    box-shadow: var(--button-shadow-hover);
+    transform: translateY(-1px);
+    background: var(--color-bg-header-button-hover);
+}
