@@ -13,7 +13,7 @@
     box-shadow: var(--button-shadow);
     transition: var(--transition-all) ease;
 
-    color: var(--color-button-header);
+    color: var(--color-header-button);
     font-weight: var(--font-weight-button-header);
     font-size: 0.9rem;
     position: relative;

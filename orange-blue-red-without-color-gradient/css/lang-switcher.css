@@ -61,7 +61,7 @@
 
 .lang-option:hover {
     background: var(--color-bg-button-lang-option-hover);
-    color: var(--color-button-header);
+    color: var(--color-header-button);
 }
 
 .lang-option.active {

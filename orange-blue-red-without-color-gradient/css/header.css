@@ -13,7 +13,7 @@
     height: 100px;
     z-index: 2000;
 
-    background-color: var(--color-bg-header);
+    background-color: var( --color-header-bg);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
     border-radius: var(--border-radius);
@@ -24,6 +24,10 @@
     grid-template-rows: 1fr 1fr;
     gap: 0.75rem;
     align-items: start;
+}
+
+.header-text {
+    color: var(--color-header-text);
 }
 
 /* TOP-RIGHT (Slogan/Suche) */

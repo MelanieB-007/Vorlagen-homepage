@@ -32,7 +32,7 @@
     box-shadow: var(--button-shadow);
     transition: var(--transition-all) ease;
 
-    color: var(--color-button-header);
+    color: var(--color-header-button);
     font-weight: var(--font-weight-button-header);
     font-size: 0.9rem;
     text-decoration: none;
@@ -62,7 +62,7 @@
 .nav-option {
     display: block;
     padding: 0.75rem 1rem;
-    color: var(--color-button-header);
+    color: var(--color-header-button);
     text-decoration: none;
     transition: var(--transition-all);
     font-size: 0.95rem;
@@ -70,7 +70,7 @@
 
 .nav-option:hover {
     background: var(--color-bg-button-lang-option-hover);
-    color: var(--color-button-header);
+    color: var(--color-header-button);
 }
 
 
