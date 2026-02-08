@@ -7,23 +7,23 @@
     padding: 0.5rem 1rem;
 
     cursor: pointer;
-    background: var(--color-bg-button-lang);
-    border: var(--button-border-header);
+    background: var(--color-header-button-bg);
+    border: var(--border-header-button);
     border-radius: var(--border-radius);
-    box-shadow: var(--button-shadow);
+    box-shadow: var(--shadow-header-button);
     transition: var(--transition-all) ease;
 
-    color: var(--color-header-button);
-    font-weight: var(--font-weight-button-header);
-    font-size: 0.9rem;
+    color: var(--color-header-button-text);
+    font-weight: var(--font-weight-header-button);
+    font-size: var(--font-size-header);
     position: relative;
 }
 
 .header-button:hover,
 .header-button:focus {
-    box-shadow: var(--button-shadow-hover);
+    box-shadow: var(--shadow-header-button-hover);
     transform: translateY(-1px);
-    background: var(--color-bg-header-button-hover);
+    background: var(--color-header-button-border-hover);
 }
 
 .arrow {

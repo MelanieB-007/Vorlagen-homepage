@@ -4,11 +4,11 @@
     padding: 1rem 0 2rem;
     width: 100%;
     max-width: var(--width-page);
-    height: 70px;
+    height: var(--height-footer);
     z-index: 1;
     text-align: center;
 
-    background-color: var(--color-bg-footer);
+    background-color: var(--color-footer-bg);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
     border-radius: var(--border-radius);
@@ -24,16 +24,16 @@
     width: 80%;
     height: 2px;
 
-    background: linear-gradient(90deg, transparent, #034ea2, transparent);
-    box-shadow: var(--box-shadow-footer);
+    background: var(--color-footer-bg-before);
+    box-shadow: var(--shadow-footer-box);
 }
 
 .footer p {
     margin: 0.5rem 0 0;
-    font-size: 0.875rem;
-    color: var(--color-text-footer);
-    font-weight: 500;
-    text-shadow: var(--text-shadow-footer), var(--text-shadow-footer-glow);
+    font-size: var(--font-size-footer);
+    color: var(--color-footer-text);
+    font-weight: var( --font-weight-footer);
+    text-shadow: var(--shadow-footer-text), var(--shadow-footer-text-glow);
     position: relative;
     z-index: 2;
 }
@@ -47,6 +47,6 @@
 
     .footer p {
         font-size: 0.8rem;
-        text-shadow: var(--text-shadow-mobile);
+        text-shadow: var(--shadow-footer-text-mobile);
     }
 }

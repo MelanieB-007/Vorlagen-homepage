@@ -3,8 +3,15 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 1rem;
+    gap: var(--gap-header);
     align-items: end;
+}
+
+.nav-list,
+.nav-list ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .nav-item {
@@ -26,15 +33,15 @@
     white-space: nowrap;
 
     cursor: pointer;
-    background: var(--color-bg-button-lang);
-    border: var(--button-border-header);
+    background: var(--color-header-button-bg);
+    border: var(--border-header-button);
     border-radius: var(--border-radius);
-    box-shadow: var(--button-shadow);
+    box-shadow: var(--shadow-header-button);
     transition: var(--transition-all) ease;
 
-    color: var(--color-header-button);
-    font-weight: var(--font-weight-button-header);
-    font-size: 0.9rem;
+    color: var(--color-header-button-text);
+    font-weight: var(--font-weight-header-button);
+    font-size: var( --font-size-header);
     text-decoration: none;
 }
 
@@ -44,7 +51,7 @@
     top: 100%;
     left: 0;
     min-width: 160px;
-    background: var(--color-bg-header);
+    background: var(--color-header-bg);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
     border-radius: var(--border-radius);
@@ -62,23 +69,21 @@
 .nav-option {
     display: block;
     padding: 0.75rem 1rem;
-    color: var(--color-header-button);
+    color: var(--color-header-button-text);
     text-decoration: none;
     transition: var(--transition-all);
-    font-size: 0.95rem;
+    font-size: var(--font-size-header);
 }
 
 .nav-option:hover {
-    background: var(--color-bg-button-lang-option-hover);
-    color: var(--color-header-button);
+    background: var(--color-header-button-bg-hover);
+    color: var(--color-header-button-text);
 }
-
 
 .nav-toggle:checked + .nav-dropdown ~ .nav-button .arrow,
 .nav-button:hover .arrow {
     transform: rotate(180deg);
 }
-
 
 /* DESKTOP */
 @media (min-width: 768px) {
@@ -101,7 +106,7 @@
     .nav-list {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem;
+        gap: var(--gap-header);
     }
 
     .nav-dropdown {
@@ -119,6 +124,6 @@
     .nav-button,
     .nav-link {
         padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
+        font-size: var(--font-size-header);
     }
 }

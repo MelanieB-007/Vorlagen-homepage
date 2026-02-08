@@ -39,7 +39,7 @@
     opacity: 0;
     visibility: hidden;
 
-    background: var(--color-bg-header);
+    background: var(--color-header-bg);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
     border-radius: var(--border-radius);
@@ -60,12 +60,12 @@
 }
 
 .lang-option:hover {
-    background: var(--color-bg-button-lang-option-hover);
-    color: var(--color-header-button);
+    background: var(--color-header-button-bg-hover);
+    color: var(--color-header-button-text);
 }
 
 .lang-option.active {
-    background: var(--color-bg-option-hover-lang);
+    background: var(--color-header-button-bg);
 }
 
 /* VERBESSERTER FOCUS-FIX: Arrow bekommt KEINEN Focus-Outline */

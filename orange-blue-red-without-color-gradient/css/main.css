@@ -17,7 +17,7 @@
     z-index: 1;
     overflow: visible;
 
-    background-color: var(--color-bg-main);
+    background-color: var(--color-main-bg);
     backdrop-filter: var(--glass-blur);
     border: var(--glass-border);
     border-radius: var(--border-radius);

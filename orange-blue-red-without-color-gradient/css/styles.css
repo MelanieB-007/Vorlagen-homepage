@@ -7,44 +7,77 @@
 }
 
 :root {
-    --color-bg-body:    #4596d1;
-    --color-bg-header:  #f8981d;
-    --color-bg-main:    #034ea2;
-    --color-bg-footer:  #ed1a3b;
-    --color-bg-card:    #4596d1;
-    --color-bg-button-lang: rgba(255,255,255,0.2);
-    --color-bg-button-lang-option-hover: rgba(255,255,255,0.1);
-    --color-bg-option-hover-lang: rgba(255,255,255,0.2);
-    --color-bg-header-button-hover: rgba(255, 165, 0, 1);
+    /* Allgemein */
+    --transition-all:                   all 0.3s;
+    --width-page:                       1200px;
+    --border-radius:                    20px;
+    --glass-blur:                       blur(10px);
 
-    --color-text-muted: #034ea2;
-    --color-text-footer: #034ea2;
-    --color-button-header: #ffffff;
-    --font-weight-button-header: 500;
+    --translateY:                       translateY(-10px);
+    --translateX:                       translateX(50%);
+    --cubic-bezier:                     cubic-bezier( 0.25, 0.46, 0.45, 0.94);
 
-    --color-shadow-box-lang: rgba(0,0,0,0.2);
-    --shadow-soft: 0 8px 32px rgba(0,0,0,0.12);
-    --shadow-hover: 0 12px 40px rgba(0,0,0,0.2);
-    --glass-border: 2pt solid rgba(255,255,255,0.3);
-    --glass-blur: blur(10px);
-    --transition-all: all 0.3s;
+    --color-glass-border:               rgba( 255, 255, 255, 0.3);
+    --glass-border:                     2pt solid var(--color-glass-border);
 
-    --button-border-header: 1px solid rgba(255, 140, 0, 0.6);
-    --button-shadow: 0 2px 8px rgba(255, 140, 0, 0.3);
-    --button-shadow-hover: 0 4px 12px rgba(255, 140, 0, 0.5);
-    --button-shadow-lang-focus: 0 0 0 3px rgba(255, 165, 0, 0.5);
-    --box-shadow-footer: 0 0 10px rgba(3, 78, 162, 0.6); /* ← Neon-Schatten! */
-    --text-shadow-footer: 0 1px 2px rgba(0,0,0,0.5);  /* ← Dunkler Schatten */
-    --text-shadow-mobile: 0 1px 1px rgba(0,0,0,0.7);
-    --text-shadow-footer-glow: 0 0 8px rgba(3, 78, 162, 0.3); /* ← Blau-Glow! */;
+    --color-shadow-soft:                rgba( 0, 0, 0, 0.12);
+    --shadow-soft:                      0 8px 32px var(--color-shadow-soft);
 
-    --width-page:  1200px;
-    --border-radius: 20px;
+    /* Header */
+    --gap-header:                       0.75rem;
 
-    --gap-header: 0.5rem;
-    --translateY: translateY(-10px);
-    --translateX: translateX(50%);
-    --cubic-bezier: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --color-header-bg:                  #f8981d;
+    --color-header-text:                #ffffff;
+    --font-weight-header-button:        500;
+    --font-size-header:                 0.9rem;
+
+    --color-header-button-text:         #ffffff;
+    --color-header-button-bg:           rgba( 255, 255, 255, 0.2);
+    --color-header-button-bg-hover:     rgba( 255, 255, 255, 0.1);
+    --color-header-button-shadow:       rgba( 255, 140, 0, 0.3);
+    --color-header-button-shadow-hover: rgba( 255, 140, 0, 0.5);
+    --color-header-button-border:       rgba( 255, 140, 0, 0.6);
+    --color-header-button-border-hover: rgba( 255, 165, 0, 1);
+    --color-header-button-border-focus: rgba( 255, 165, 0, 0.5);
+
+    --border-header-button:             1px solid var(--color-header-button-border);
+    --shadow-header-button:             0 2px 8px var(--color-header-button-shadow);
+    --shadow-header-button-hover:       0 4px 12px var(--color-header-button-shadow-hover);
+    --button-shadow-lang-focus:         0 0 0 3px var(--color-header-button-border-focus);
+
+    /* Body */
+    --color-body-bg:                    #4596d1;
+
+    /* Footer */
+    --height-footer:                    70px;
+    --font-weight-footer:               500;
+    --font-size-footer:                 0.875rem;
+
+    --color-footer-bg:                  #ed1a3b;
+    --color-footer-bg-before:           linear-gradient(90deg, transparent, #034ea2, transparent);
+    --color-footer-text:                #034ea2;
+    --color-footer-shadow-box:          rgba( 3, 78, 162, 0.6);
+    --color-footer-shadow-text:         rgba( 0, 0, 0, 0.5);
+    --color-footer-shadow-text-mobile:  rgba( 0 ,0, 0, 0.7);
+    --color-footer-shadow-text-glow:    rgba( 3, 78, 162, 0.3);
+
+    --shadow-footer-box:                0 0 10px var(--color-footer-shadow-box);
+    --shadow-footer-text:               0 1px 2px var(--color-footer-shadow-text);
+    --shadow-footer-text-glow:          0 0 8px var(--color-footer-shadow-text-glow);
+    --shadow-footer-text-mobile:        0 1px 1px  var(--color-footer-shadow-text-mobile);
+
+    /* Main */
+    --color-main-bg:                    #034ea2;
+
+    /* Card */
+    --color-card-bg:                    #4596d1;
+    --color-card-hover:                 rgba( 0, 0, 0, 0.2);
+    --shadow-card-hover:                0 12px 40px var(--color-card-hover);
+    --gap-card:                         1rem;
+    --max-width-card:                   1100px;
+    --max-width-card-col2:              550px;
+    --max-width-card-col3:              360px;
+    --height-card:                      200px;
 }
 
 body {
@@ -54,7 +87,7 @@ body {
     margin: 0;
     padding: 10px 0 0 0;
     min-height: 100vh;
-    background-color: var(--color-bg-body);
+    background-color: var(--color-body-bg);
     font-family: sans-serif;
     position: relative;
     z-index: 0;
