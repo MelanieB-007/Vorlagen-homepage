@@ -1,4 +1,5 @@
 @import "cards.css";
+@import "breadcrumb.css";
 
 .container {
     max-width: var(--width-page);

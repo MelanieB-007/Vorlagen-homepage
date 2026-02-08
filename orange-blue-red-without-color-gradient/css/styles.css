@@ -78,6 +78,7 @@
     --max-width-card-col2:              550px;
     --max-width-card-col3:              360px;
     --height-card:                      200px;
+    --height-card-header:               100px;
 }
 
 body {
