@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Homepage</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Junior Web Developer | React, JavaScript, Zoo-Quiz Creator | Tornesch">
+
+        <link rel="stylesheet" href="../ressources/css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.3.2/css/flag-icons.min.css">
+
+        <script src="../ressources/js/lang-switcher.js" defer></script>
+    </head>
+    <body>
+        <header class="header container">
+            <div class="logo-section">
+                <img class="logo" src="../ressources/images/logo.png" alt="Logo Klub der tollen Tiere"/>
+            </div>
+            <div class="text-section">
+                Homepage
+            </div>
+            <div class="header-top-right">
+                <span class="header-text">Slogan / Suchfeld / Zweites Logo?</span>
+            </div>
+            <nav class="nav-section">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="header-button nav-link">
+                            Home
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <input type="checkbox" id="nav-projekte-toggle" class="nav-toggle">
+                        <label for="nav-projekte-toggle" class="header-button nav-button">
+                            Projekte
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </label>
+                        <ul class="nav-dropdown">
+                            <li><a href="#" class="nav-option">Zoo Quiz</a></li>
+                            <li><a href="#" class="nav-option">React App</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                        <label for="nav-toggle" class="nav-button">
+                            Über mich
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </label>
+                        <ul class="nav-dropdown">
+                            <li><a href="#" class="nav-option">Skills</a></li>
+                            <li><a href="#" class="nav-option">Bootcamp</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="header-button nav-link">
+                            Kontakt
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="right-section">
+                <div class="login">
+                    <button class="header-button">Login</button>
+                </div>
+
+                <div class="lang-switcher">
+                    <input type="checkbox" id="lang-toggle" class="lang-toggle">
+                    <label for="lang-toggle" class="header-button lang-button">
+                        <span class="fi fi-de"></span>
+                        <svg class="arrow" viewBox="0 0 24 24" fill="currentColor" focusable="false">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </label>
+                    <div class="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span class="fi fi-de"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span class="fi fi-gb"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fr">
+                            <span class="fi fi-fr"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 2. Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="container breadcrumb">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projekte</a></li>
+                <li aria-current="page">Zoo Quiz</li>
+            </ul>
+        </nav>
+        <main class="main container">
+            <!-- Header Karte -->
+            <div class="cards-container">
+                <div class="card-header">
+                    <div class="card-header-text">
+                        <div class="card-header-text-1">Tier deutsch</div>
+                        <div class="card-header-text-2">Tier englisch</div>
+                    </div>
+                    <div class="card-picture-wrapper">
+                        <img class="card-picture-header" src="../ressources/images/logo.png" alt="Tier Logo" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1 Karte -->
+            <div class="cards-container">
+                <div class="card card-col1">Karte</div>
+            </div>
+
+            <!-- 2 Karten -->
+            <div class="cards-container">
+                <div class="card card-col2">Karte 1</div>
+                <div class="card card-col2">Karte 2</div>
+            </div>
+
+            <!-- 3 Karten -->
+            <div class="cards-container">
+                <div class="card card-col3">Karte 1</div>
+                <div class="card card-col3">Karte 2</div>
+                <div class="card card-col3">Karte 3</div>
+            </div>
+        </main>
+        <footer class="footer container">
+            <div class="footer-content">
+                <p>
+                    &copy; 2026 Melanie Busse |
+                    Fullstack Web Developer |
+                    <a href="#">Impressum</a> |
+                    <a href="#">Kontakt</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

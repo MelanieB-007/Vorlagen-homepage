@@ -1,0 +1,22 @@
+.logo {
+    width: 100px;
+    max-width: 115px;
+    height: auto;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .logo {
+        height: 100px;
+        width: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .logo {
+        height: 70px !important;
+        width: auto;
+        padding: 0;
+    }
+}

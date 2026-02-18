@@ -1,0 +1,44 @@
+.header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-header);
+    height: 100%;
+    padding: 0.5rem 1rem;
+
+    cursor: pointer;
+    background: var(--color-header-button-bg);
+    border: var(--border-header-button);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-header-button);
+    transition: var(--transition-all) ease;
+
+    color: #68B300;
+    text-shadow:
+            1px 1px 0 #0e7a4a,   /* ← Angepasst: Kleiner für Buttons */
+            2px 2px 0 #056d42,
+            3px 3px 0 #2f3542;
+    letter-spacing: 0.2em;
+    font-weight:800;
+    font-size: var(--font-size-header);
+    position: relative;
+}
+
+.header-button:hover,
+.header-button:focus {
+    box-shadow: var(--shadow-header-button-hover);
+    transform: translateY(-1px);
+    background: var(--color-header-button-border-hover);
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: var(--transition-all) ease;
+}
+
+/* Globale Focus-Fix für alle Arrows in Buttons */
+.header-button .arrow:focus {
+    outline: none !important;
+}

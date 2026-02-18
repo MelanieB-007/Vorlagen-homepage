@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Tier</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Junior Web Developer | React, JavaScript, Zoo-Quiz Creator | Tornesch">
+        <link rel="stylesheet" href="../ressources/css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.3.2/css/flag-icons.min.css">
+        <script src="../ressources/js/navigation.js" defer></script>
+        <script src="../ressources/js/lang-switcher.js" defer></script>
+    </head>
+    <body>
+        <header class="header container">
+            <div class="logo-section">
+                <img class="logo" src="../ressources/images/logo.png" alt="Logo Klub der tollen Tiere"/>
+            </div>
+            <div class="title-section">
+                <h1 class="graffiti-title">Klub der tollen Tiere</h1>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">
+                            Home
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <input type="checkbox" id="nav-toggle-zoo" class="nav-toggle">
+                        <label for="nav-toggle-zoo" class="nav-button">
+                            Zoo
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </label>
+                        <ul class="nav-dropdown">
+                            <li><a href="#" class="nav-option">Zoo Gebiete</a></li>
+                            <li><a href="#" class="nav-option">Zoo Gehege</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <input type="checkbox" id="nav-toggle-tiere" class="nav-toggle">
+                        <label for="nav-toggle-tiere" class="header-button nav-button">
+                            Tiere
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </label>
+                        <ul class="nav-dropdown">
+                            <li><a href="#" class="nav-option">Tierübersicht</a></li>
+                            <li><a href="#" class="nav-option">Tier anlegen</a></li>
+                            <li><a href="#" class="nav-option">Tier bearbeiten</a></li>
+                            <li><a href="#" class="nav-option">Farbvarianten</a></li>
+                            <li><a href="#" class="nav-option">Farbvariante anlegen</a></li>
+                            <li><a href="#" class="nav-option">Farbvariante bearbeiten</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <input type="checkbox" id="nav-toggle-klub" class="nav-toggle">
+                        <label for="nav-toggle-klub" class="header-button nav-button">
+                            Klub
+                            <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </label>
+                        <ul class="nav-dropdown">
+                            <li><a href="#" class="nav-option">Mitglieder</a></li>
+                            <li><a href="#" class="nav-option">Wettbewerbe</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="right-section">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <button class="nav-link">Login</button>
+
+                <div class="lang-switcher">
+                    <input type="checkbox" id="lang-toggle" class="lang-toggle">
+                    <label for="lang-toggle" class="lang-button nav-button">
+                        <span class="fi fi-de"></span>
+                        <svg class="arrow" viewBox="0 0 24 24" fill="currentColor" focusable="false">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </label>
+                    <div class="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span class="fi fi-de"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span class="fi fi-gb"></span>
+                        </div>
+                        <div class="lang-option" data-lang="nl">
+                            <span class="fi fi-nl"></span>
+                        </div>
+                        <div class="lang-option" data-lang="be">
+                            <span class="fi fi-be"></span>
+                        </div>
+                        <div class="lang-option" data-lang="dk">
+                            <span class="fi fi-dk"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="menu-toggle" class="hamburger nav-button" aria-label="Menü öffnen/schließen">☰</label>
+                <nav class="mobile-nav">
+                    <label for="menu-toggle" class="close-btn" aria-label="Menü schließen">&times;</label>
+                    <ul>
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link">
+                                Home
+                                <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <input type="checkbox" id="nav-toggle-zoo-mobile" class="nav-toggle">
+                            <label for="nav-toggle-zoo-mobile" class="nav-button">
+                                Zoo
+                                <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </label>
+                            <ul class="nav-dropdown">
+                                <li><a href="#" class="nav-option">Zoo Gebiete</a></li>
+                                <li><a href="#" class="nav-option">Zoo Gehege</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <input type="checkbox" id="nav-toggle-tiere-mobile" class="nav-toggle">
+                            <label for="nav-toggle-tiere-mobile" class="header-button nav-button">
+                                Tiere
+                                <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </label>
+                            <ul class="nav-dropdown">
+                                <li><a href="#" class="nav-option">Tierübersicht</a></li>
+                                <li><a href="#" class="nav-option">Tier anlegen</a></li>
+                                <li><a href="#" class="nav-option">Tier bearbeiten</a></li>
+                                <li><a href="#" class="nav-option">Farbvarianten</a></li>
+                                <li><a href="#" class="nav-option">Farbvariante anlegen</a></li>
+                                <li><a href="#" class="nav-option">Farbvariante bearbeiten</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <input type="checkbox" id="nav-toggle-klub-mobile" class="nav-toggle">
+                            <label for="nav-toggle-klub-mobile" class="header-button nav-button">
+                                Klub
+                                <svg class="arrow" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </label>
+                            <ul class="nav-dropdown">
+                                <li><a href="#" class="nav-option">Mitglieder</a></li>
+                                <li><a href="#" class="nav-option">Wettbewerbe</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+<!--        <nav aria-label="Breadcrumb" class="breadcrumb container">-->
+<!--            <ul>-->
+<!--                <li><a href="#">Home</a></li>-->
+<!--                <li><a href="#">Tiere</a></li>-->
+<!--                <li aria-current="page">Tier</li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+        <main class="main container">
+        </main>
+
+        <footer class="footer container">
+        </footer>
+    </body>
+</html>

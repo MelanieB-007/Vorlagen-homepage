@@ -1,0 +1,135 @@
+.nav-button,
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-header);
+    height: 100%;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+
+    cursor: pointer;
+    background: var(--color-header-button-bg);
+    border: var(--border-header-button);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-header-button);
+    transition: var(--transition-all) ease;
+
+    color: #68B300;
+    text-shadow:
+            1px 1px 0 #0e7a4a,
+            2px 2px 0 #056d42,
+            3px 3px 0 #2f3542;
+    font-weight: var(--font-weight-header-button);
+    font-size: var( --font-size-header);
+    text-decoration: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-toggle {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background: var(--color-header-bg);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    flex-direction: column;
+    z-index: 2002;
+    margin-top: 0.25rem;
+    padding: 0.5rem 0;
+}
+
+.nav-toggle:checked ~ .nav-dropdown {
+    display: flex !important;
+}
+
+.nav-option {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--color-header-button-text);
+    text-decoration: none;
+    transition: var(--transition-all);
+    font-size: var(--font-size-header);
+}
+
+.nav-option:hover {
+    background: var(--color-header-button-bg-hover);
+    color: var(--color-header-button-text);
+}
+
+.nav-toggle:checked + .nav-dropdown ~ .nav-button .arrow,
+.nav-button:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: var(--transition-all) ease;
+}
+
+.arrow:focus {
+    outline: none !important;
+}
+
+.nav-dropdown {
+    display: none !important;
+}
+.nav-toggle {
+    display: none !important;
+}
+.desktop-nav .nav-item:hover .nav-dropdown {
+    display: flex !important;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none !important;
+    }
+
+    input[type="checkbox"] {
+        display: none !important;
+    }
+
+    .desktop-nav {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
+        justify-self: center;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 0.5rem;
+    }
+
+    .nav-button:hover + .nav-dropdown,
+    .nav-item:hover .nav-dropdown {
+        display: flex !important;
+    }
+
+    .nav-dropdown {
+        top: calc(100% + 0.5rem);
+    }
+
+    .hamburger {
+        display: none !important;
+    }
+}
